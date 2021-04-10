@@ -1,6 +1,7 @@
 package com.esi.twilio_call;
 
 import com.twilio.twiml.VoiceResponse;
+import com.twilio.twiml.voice.Pause;
 import com.twilio.twiml.voice.Say;
 import com.twilio.twiml.voice.Start;
 import com.twilio.twiml.voice.Stream;
@@ -16,8 +17,9 @@ public class TwimlController {
     public String getTwiml(UriComponentsBuilder uri){
         String wsUrl = "wss://"+uri.build().getHost()+ "/msgs";
         return new VoiceResponse.Builder()
-                .say(new Say.Builder("Hello Tou Mohammed Start Talking ").build())
+                .say(new Say.Builder("Hello Mohammed Start talking and the live audio will be streamed to your app").build())
                 .start(new Start.Builder().stream(new Stream.Builder().url(wsUrl).build()).build())
-    .build().toXml();
+                .pause(new Pause.Builder().length(30).build())
+                .build().toXml();
     }
 }
