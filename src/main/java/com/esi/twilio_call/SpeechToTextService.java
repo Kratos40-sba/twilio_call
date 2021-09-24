@@ -30,6 +30,9 @@ public class SpeechToTextService {
 
             @Override
             public void onResponse(StreamingRecognizeResponse streamingRecognizeResponse) {
+                /*
+                this Invoke the exception
+                 */
                 StreamingRecognitionResult result = streamingRecognizeResponse.getResultsList().get(0);
                 SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
                 onTranscription.accept(alternative.getTranscript());
@@ -49,7 +52,7 @@ public class SpeechToTextService {
         RecognitionConfig recognitionConfig =
                 RecognitionConfig.newBuilder()
                 .setEncoding(RecognitionConfig.AudioEncoding.MULAW)
-                .setLanguageCode("en-US")
+                .setLanguageCode("fr-FR")
                 .setSampleRateHertz(8000)
                 .build();
         StreamingRecognitionConfig streamingRecognitionConfig =
@@ -77,7 +80,7 @@ public class SpeechToTextService {
                     .build();
             req.send(request);
         } catch(JSONException e ){
-            logger.error("Format json invalide");
+            logger.error("Format json invalid");
             e.printStackTrace();
         }
     }

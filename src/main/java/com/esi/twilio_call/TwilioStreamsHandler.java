@@ -27,12 +27,18 @@ public class TwilioStreamsHandler extends AbstractWebSocketHandler {
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
         service.get(session).send(message.getPayload());
+        /*
+        insertion here todo
+         */
     }
 
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
         service.get(session).close();
         service.remove(session);
+        /*
+        insertion dans bdd
+         */
     }
 
 

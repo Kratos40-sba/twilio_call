@@ -23,3 +23,7 @@ public class TwimlController {
                 .build().toXml();
     }
 }
+/*
+ export GOOGLE_APPLICATION_CREDENTIALS=/home/abdou/Downloads/spring-boot-k8s-demo1-4a676b4cdf59.json"
+
+ */
