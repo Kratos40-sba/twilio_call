@@ -2,8 +2,8 @@ name : Build and Deploy to GKE
 on:
   push:
     branches:
-      - master
-      - origin/master
+      - main
+
 env:
   PROJECT_ID : ${{secrets.GKE_PROJECT}}
   GKE_CLUSETER : cluster-twilio
