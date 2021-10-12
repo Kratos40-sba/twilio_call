@@ -7,7 +7,7 @@ on:
 
 env:
   PROJECT_ID: ${{secrets.GKE_PROJECT}}
-  GKE_CLUSTER: github-actions-gke
+  GKE_CLUSTER: cluster-twilio
   GKE_ZONE: us-central1-c
   DEPLOYMENT_NAME: twilio_call-gke
   IMAGE: twilio_call-gke-image
