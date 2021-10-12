@@ -7,7 +7,7 @@ on:
 env:
   PROJECT_ID : ${{secrets.GKE_PROJECT}}
   GKE_CLUSETER : cluster-twilio
-  GKE_ZONE: us-central1-a
+  GKE_ZONE: us-central1-c
   DEPLOYMENT_NAME: twilio-gke-deployment
   IMAGE: twilio-gke-image
   TAG : 1.0.0
