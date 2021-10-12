@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: twilio_call
+spec:
+  replicas: 1
+  selector :
+    matchLables:
+      app: twilio_call
+  template:
+    metadata:
+      labels:
+        app: twilio_call
+    spec:
+      containers:
+        - name : app
+          image: gcr.io/PROJECT_ID/IMAGE:TAG
+          imagePullPolicy: Always
