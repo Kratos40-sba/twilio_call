@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - origin/master
 env:
   PROJECT_ID : ${{secrets.GKE_PROJECT}}
   GKE_CLUSETER : cluster-twilio
